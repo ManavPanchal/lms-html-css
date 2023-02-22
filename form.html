@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/icons8-synchronize-office-16.png">
+    <title>nothing</title>
+</head>
+<body>
+    <div class="page_heading">
+        Driving licence form
+    </div>
+    <form id="user_registration_form">
+        <fieldset>
+            <div class="name_div">
+                <div class="name_field">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" >
+                </div>
+                <div class="name_field">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" >
+                </div>
+                <div class="name_field">
+                    <label for="middle_name">Middle Name:</label>
+                    <input type="text" id="middle_name" name="middle_name" >
+                </div>
+                
+                
+            </div>
+            <label for="adhar_number">Adhar Number:</label>
+            <input type="text" id="adhar_number" name="adhar_number" required>
+            <label for="dist_name">District:</label>
+            <input type="text" id="dist_name" name="dist_name" >
+            <label for="pin_number">Pin-Code</label>
+            <input type="number" id="pin_number" name="pin_number" maxlength="6" size="6">
+            <input type="submit">
+            <input type="radio">
+        </fieldset>
+    </form>
+    <script>
+        
+        var x = document.getElementById("user_registration_form");
+        function submition(event){
+            event.preventDefault();
+            let temp_data = event.target;
+            let user_data = { "First Name" : temp_data.first_name, "Last Name" : temp_data.last_name}
+            user_data.forEach(el => {
+                console.log(el.value);
+            });
+        }
+        x.addEventListener('submit',submition)
+    </script>
+</body>
+</html>
